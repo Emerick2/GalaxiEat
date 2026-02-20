@@ -171,3 +171,4 @@ VALUES ("Théo", "Durand", "chef cuisinier", 2);
 
 INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
 VALUES ("Julia", "Payet", "chef cuisinier", 1);
+-- 
