@@ -27,3 +27,31 @@ SELECT *
 FROM CustomerOrders
 ORDER BY COUNT(CustomerOrders."Total_amount") DESC
 LIMIT 1;
+
+-- Mettre a jours les plats végétariens : 
+UPDATE Dishes
+SET "is_vegan" = (
+SELECT Ingredients."is_vegan"
+FROM Dishes d2
+JOIN DishIngredients ON DishIngredients."IdDishes" = d2."IdDishes"
+JOIN Ingredients ON Ingredients."IdIngredient" = DishIngredients."IdIngredient"
+WHERE Dishes."IdDishes" = d2."IdDishes"
+ORDER BY Ingredients."is_vegan"
+LIMIT 1
+);
+
+
+
+SELECT (
+SELECT Ingredients."is_vegan"
+FROM Dishes d2
+JOIN DishIngredients ON DishIngredients."IdDishes" = d2."IdDishes"
+JOIN Ingredients ON Ingredients."IdIngredient" = DishIngredients."IdIngredient"
+WHERE d1."IdDishes" = d2."IdDishes"
+ORDER BY Ingredients."is_vegan"
+LIMIT 1
+) AS "is_vegan"
+FROM Dishes d1
+
+
+
