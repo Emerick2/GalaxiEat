@@ -23,3 +23,13 @@ SELECT *
 FROM CustomerOrders
 ORDER BY COUNT(CustomerOrders."Total_amount") DESC
 LIMIT 1;
+
+
+-- Modification
+CREATE TABLE DishIngredients (
+	IdDishIngredients INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	IdIngredient INTEGER NOT NULL,
+	IdDishes INTEGER NOT NULL,
+	is_vegan BOOLEAN NOT NULL
+)
+

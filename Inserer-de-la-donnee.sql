@@ -26,13 +26,13 @@ INSERT INTO Dishes ("Name", "Price", "Category")
 VALUES ("Burger à la pizza d’antimatière douce", 31, "Burgers");
 
 INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("smoothies de nébuleuse", 2.60, "Smoothies");
+VALUES ("Smoothies de nébuleuse", 2.60, "Smoothies");
 
 INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("smoothies au choux fleur", 3, "Smoothies");
+VALUES ("Smoothies au choux fleur", 3, "Smoothies");
 
 INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("smoothies à la pizza de burger", 11, "Smoothies");
+VALUES ("Smoothies à la pizza de burger", 11, "Smoothies");
 
 INSERT INTO Dishes ("Name", "Price", "Category")
 VALUES ("Quiche à la poussière d'étoile", 16, "Quiche");
