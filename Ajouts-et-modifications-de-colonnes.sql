@@ -1,0 +1,8 @@
+ALTER TABLE Employees
+ADD COLUMN hire_date DATE;
+
+ALTER TABLE Dishes
+ADD COLUMN is_vegan BOOLEAN;
+
+ALTER TABLE Orders
+RENAME TO CustomerOrders;

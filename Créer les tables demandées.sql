@@ -1,0 +1,35 @@
+CREATE TABLE "Restaurants" (
+	IdRestaurant INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	Name VARCHAR(50),
+	Planet VARCHAR(50),
+	Opening_year INTEGER
+);
+
+CREATE TABLE "Employees" (
+	IdEmployees INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	Firstname VARCHAR(50),
+	Lastname VARCHAR(50),
+	Role VARCHAR(50),
+	IdRestaurant INTEGER
+);
+
+CREATE TABLE "Dishes" (
+	IdDishes INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	Name VARCHAR(50),
+	Price INTEGER,
+	Category VARCHAR(50)
+);
+
+CREATE TABLE "Orders" (
+	IdOrders INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	IdRestaurant INTEGER,
+	Total_amount INTEGER,
+	Customer_name VARCHAR(50)
+);
+
+CREATE TABLE "OrderItems" (
+	IdOrderItems INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	IdOrders INTEGER,
+	IdDishes INTEGER,
+	Quantity INTEGER
+);
