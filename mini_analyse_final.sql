@@ -1,5 +1,5 @@
 -- Prix moyen des plats par catégorie.
-SELECT Category, AVG(Price) AS AveragePrice
+SELECT Category, ROUND(AVG(Price),2) AS AveragePrice
 FROM Dishes
 GROUP BY Category;
 

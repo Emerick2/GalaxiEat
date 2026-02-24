@@ -2,11 +2,11 @@
 CREATE TABLE Ingredients (
 	IdIngredient INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 	Name VARCHAR(50)
+	is_vegan BOOLEAN;
 )
 
 -- relation DishIngredients 
-ALTER TABLE Dishes
-ADD COLUMN Dishes."DishIngredients";
+
 
 -- Générer un "menu vegan"
 SELECT *

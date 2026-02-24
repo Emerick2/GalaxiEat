@@ -15,7 +15,7 @@ ORDER BY Role;
 -- Lister tous les plats végétariens
 SELECT Name
 FROM Dishes
-WHERE is_vegan = TRUE;
+WHERE is_vegan = "True";
 
 -- Lister les plats dont le prix est supérieur à la moyenne des prix.
 SELECT Name, Price
