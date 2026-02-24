@@ -3,7 +3,7 @@ Dishes."Category",
 Dishes."is_vegan",
 CASE
 	WHEN Dishes."Price" > 12
-		THEN Dishes."Price"*1.10
-	ELSE Dishes."Price"*1.05
+		THEN ROUND(Dishes."Price"*1.10,2)
+	ELSE ROUND(Dishes."Price"*1.05,2)
 END "Price"
 FROM Dishes;

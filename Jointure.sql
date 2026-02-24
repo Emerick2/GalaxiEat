@@ -13,7 +13,6 @@ JOIN Restaurants ON Restaurants."IdRestaurant" = CustomerOrders."IdRestaurant";
 
 
 -- Lister tous les restaurants avec leur nombre d’employés.
-
 SELECT COUNT(Employees."IdRestaurant" = Restaurants."IdRestaurant") AS "nombre d’employés", Restaurants."Name" AS "Nom du restaurant"
 FROM Restaurants
 JOIN Employees ON Employees."IdRestaurant" = Restaurants."IdRestaurant"
