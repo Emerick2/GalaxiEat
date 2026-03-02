@@ -1,173 +1,65 @@
+    -- Restaurants:
 INSERT INTO Restaurants ("Name", "Planet")
-VALUES ("Milky Way Diner", "Terre");
+VALUES ("Milky Way Diner", "Terre"),
+("Cresheano", "Lunne"),
+("MiamMiam", "Pluton"),
+("SuperBon", "Soleil (5ème arrondisement)");
 
-INSERT INTO Restaurants ("Name", "Planet")
-VALUES ("Cresheano", "Lunne");
-
-INSERT INTO Restaurants ("Name", "Planet")
-VALUES ("MiamMiam", "Pluton");
-
-INSERT INTO Restaurants ("Name", "Planet")
-VALUES ("SuperBon", "Soleil (5ème arrondisement)");
-
+	-- Dishes:
 INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("Burger d’Astéroïde", 12.5, "Burgers");
+VALUES ("Burger d’Astéroïde", 12.5, "Burgers"),
+("pizzas à l’antimatière douce", 5.31, "Pizza"),
+("pizza d’Astéroïde", 9.31, "pizza"),
+("pizza a la pizza", 12.5, "pizza"),
+("Burger à la pizza d’antimatière douce", 31, "Burgers"),
+("smoothies de nébuleuse", 2.60, "Smoothies"),
+("smoothies au choux fleur", 3, "Smoothies"),
+("smoothies à la pizza de burger", 11, "Smoothies"),
+("Quiche à la poussière d'étoile", 16, "Quiche"),
+("Quiche nature", 7, "Quiche"),
+("Quiche au caramel", 14.12, "Quiche");
 
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("pizzas à l’antimatière douce", 5.31, "Pizza");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("pizza d’Astéroïde", 9.31, "pizza");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("pizza a la pizza", 12.5, "pizza");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("Burger à la pizza d’antimatière douce", 31, "Burgers");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("smoothies de nébuleuse", 2.60, "Smoothies");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("smoothies au choux fleur", 3, "Smoothies");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("smoothies à la pizza de burger", 11, "Smoothies");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("Quiche à la poussière d'étoile", 16, "Quiche");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("Quiche nature", 7, "Quiche");
-
-INSERT INTO Dishes ("Name", "Price", "Category")
-VALUES ("Quiche au caramel", 14.12, "Quiche");
-
-
-
-
+    -- Employees:
 INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Zorglub", "Bidoum", "Chef cuisinier", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Jannah", "Lefebvre", "plongeur", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Lily", "Sanchez", "plongeur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Enzo", "Muller", "plongeur", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Loan", "Roussel", "plongeur", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Zoé", "Fabre", "plongeur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Apolline", "Blanc", "plongeur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Eva", "Bertrand", "plongeur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Arthur", "Guerin", "plongeur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Suzanne", "Roche", "plongeur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Inaya", "Petit", "plongeur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Gaspard", "Simon", "plongeur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Théo", "Moreau", "plongeur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Yasmine", "Morin", "commis de cuisine", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Adèle", "Arnaud", "commis de cuisine", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Soan", "Lecomte", "commis de cuisine", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Nathan", "Masson", "commis de cuisine", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Margot", "Mercier", "cuisinier", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Victor", "Fontaine", "cuisinier", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Auguste", "Boyer", "cuisinier", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Roméo", "Meunier", "cuisinier", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Yanis", "Renard", "cuisinier", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Roméo", "Garcia", "cuisinier", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Alexandre", "Sanchez", "cuisinier", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Zayn", "Olivier", "cuisinier", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Léonie", "Thomas", "serveur", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Marie", "Richard", "serveur", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Joséphine", "Boyer", "serveur", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Noah", "Philippe", "serveur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Zayn", "Martinez", "serveur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Louna", "Leroy", "serveur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Marin", "Renard", "serveur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Lana", "Robert", "serveur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Mathis", "Vidal", "serveur", 4);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Enzo", "Martinez", "serveur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Marceau", "Noel", "serveur", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Chloé", "Roux", "chef cuisinier", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Eden", "Roche", "chef cuisinier", 1);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Camille", "Robert", "chef cuisinier", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Gabin", "Lopez", "chef cuisinier", 3);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Théo", "Durand", "chef cuisinier", 2);
-
-INSERT INTO Employees ("Firstname", "Lastname", "Role", "IdRestaurant")
-VALUES ("Julia", "Payet", "chef cuisinier", 1);
+VALUES ("Zorglub", "Bidoum", "Chef cuisinier", 1),
+("Jannah", "Lefebvre", "plongeur", 2),
+("Lily", "Sanchez", "plongeur", 1),
+("Enzo", "Muller", "plongeur", 2),
+("Loan", "Roussel", "plongeur", 3),
+("Zoé", "Fabre", "plongeur", 4),
+("Apolline", "Blanc", "plongeur", 1),
+("Eva", "Bertrand", "plongeur", 1),
+("Arthur", "Guerin", "plongeur", 1),
+("Suzanne", "Roche", "plongeur", 4),
+("Inaya", "Petit", "plongeur", 1),
+("Gaspard", "Simon", "plongeur", 4),
+("Théo", "Moreau", "plongeur", 4),
+("Yasmine", "Morin", "commis de cuisine", 3),
+("Adèle", "Arnaud", "commis de cuisine", 1),
+("Soan", "Lecomte", "commis de cuisine", 3),
+("Nathan", "Masson", "commis de cuisine", 3),
+("Margot", "Mercier", "cuisinier", 2),
+("Victor", "Fontaine", "cuisinier", 2),
+("Auguste", "Boyer", "cuisinier", 2),
+("Roméo", "Meunier", "cuisinier", 2),
+("Yanis", "Renard", "cuisinier", 1),
+("Roméo", "Garcia", "cuisinier", 1),
+("Alexandre", "Sanchez", "cuisinier", 3),
+("Zayn", "Olivier", "cuisinier", 3),
+("Léonie", "Thomas", "serveur", 3),
+("Marie", "Richard", "serveur", 3),
+("Joséphine", "Boyer", "serveur", 3),
+("Noah", "Philippe", "serveur", 4),
+("Zayn", "Martinez", "serveur", 4),
+("Louna", "Leroy", "serveur", 4),
+("Marin", "Renard", "serveur", 4),
+("Lana", "Robert", "serveur", 4),
+("Mathis", "Vidal", "serveur", 4),
+("Enzo", "Martinez", "serveur", 1),
+("Marceau", "Noel", "serveur", 1),
+("Chloé", "Roux", "chef cuisinier", 1),
+("Eden", "Roche", "chef cuisinier", 1),
+("Camille", "Robert", "chef cuisinier", 3),
+("Gabin", "Lopez", "chef cuisinier", 3),
+("Théo", "Durand", "chef cuisinier", 2),
+("Julia", "Payet", "chef cuisinier", 1);
