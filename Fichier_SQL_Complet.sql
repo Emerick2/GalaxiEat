@@ -258,11 +258,104 @@ CREATE TABLE Ingredients (
 	IdIngredient INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 	Name VARCHAR(50)
 	is_vegan BOOLEAN
-)
+);
 
 -- Relation DishIngredients.
 ALTER TABLE Dishes
 ADD COLUMN Dishes."DishIngredients";
+
+-- Création d'un tableau DishIngredients :
+CREATE TABLE DishIngredients (
+	IdDishIngredients INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	IdIngredient INTEGER NOT NULL,
+	IdDish INTEGER NOT NULL
+);
+
+-- Créé des ingrédiants.
+INSERT INTO Ingredients ("Name", "is_vegan")
+VALUES 	("Antimatière douce", "True"),
+		("Astéroïde", "True"),
+		("Jambon", "False"),
+		("Fromage", "True"),
+		("Pâte", "True"),
+		("Sause tomate", "True"),
+		("Pain", "True"),
+		("Olive", "True"),
+		("Salade", "True"),
+		("Eau", "True"),
+		("Jus de fruits", "True"),
+		("Lait", "True"),
+		("Jus de soja", "True"),
+		("Nébuleuse", "True"),
+		("Choux fleur", "True"),
+		("Poussière d'étoile", "True"),
+		("Caramel", "True");
+		
+-- Créé la liaison entre les ingrédiants et les plats.
+INSERT INTO DishIngredients ("IdIngredient", "IdDishes")
+VALUES 	(7, 1),
+		(2, 1),
+		(9, 1),
+		(3, 1),
+		(9, 2),
+		(3, 2),
+		(4, 2),
+		(5, 2),
+		(8, 2),
+		(9, 2),
+		(1, 3),
+		(3, 3),
+		(2, 3),
+		(4, 3),
+		(5, 3),
+		(6, 3),
+		(8, 3),
+		(17, 3),
+		(4, 4),
+		(5, 4),
+		(6, 4),
+		(8, 4),
+		(15, 4),
+		(4, 5),
+		(5, 5),
+		(9, 5),
+		(15, 5),
+		(10, 6),
+		(12, 6),
+		(14, 6),
+		(10, 7),
+		(13, 7),
+		(11, 7),
+		(15, 7),
+		(10, 8),
+		(12, 8),
+		(6, 8),
+		(4, 8),
+		(8, 8),
+		(3, 9),
+		(4, 9),
+		(7, 9),
+		(12, 9),
+		(16, 9),
+		(7, 10),
+		(10, 10),
+		(5, 11),
+		(6, 11),
+		(7, 11),
+		(12, 11),
+		(17, 11);
+
+-- Mettre à jours la table Dishes pour savoir si le plat est végan.
+UPDATE Dishes
+SET "is_vegan" = (
+	SELECT Ingredients."is_vegan"
+	FROM Dishes d2
+	JOIN DishIngredients ON DishIngredients."IdDishes" = d2."IdDishes"
+	JOIN Ingredients ON Ingredients."IdIngredient" = DishIngredients."IdIngredient"
+	WHERE Dishes."IdDishes" = d2."IdDishes"
+	ORDER BY Ingredients."is_vegan"
+	LIMIT 1
+);
 
 -- Générer un "menu vegan".
 SELECT *
