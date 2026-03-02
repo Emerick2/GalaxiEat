@@ -186,7 +186,7 @@ ORDER BY CustomerOrders.Total_amount DESC;
 
 ---- Jointures. ----
 --  Liste des employés avec le nom de leur restaurant. 
-SELECT Employees.Firstname ||  ' ' || Employees.Lastname AS "Nom de l'employé", Restaurants.Name AS "Nom du restaurent"
+SELECT Employees.Firstname ||  ' ' || Employees.Lastname AS "Nom de l'employé", Restaurants.Name AS "Nom du restaurant"
 FROM Employees
 JOIN Restaurants ON Restaurants.IdRestaurant = Employees.IdRestaurant;
 
@@ -231,14 +231,14 @@ WHERE Total_amount < 5;
 
 ---- Mini-analyse finale. ----
 -- Prix moyen des plats par catégorie.
-SELECT Dishes.Category, AVG(Dishes.Price) AS "AveragePrice"
+SELECT Category, ROUND(AVG(Price),2) AS AveragePrice
 FROM Dishes
-GROUP BY Dishes.Category;
+GROUP BY Category;
 
 -- Montant total des ventes.
 SELECT SUM(CustomerOrders.Total_amount) AS "TotalSales"
 FROM CustomerOrders;
-    
+
 -- Les 3 plats les plus chers.
 SELECT Dishes.Name, Dishes.Price
 FROM Dishes
@@ -262,7 +262,7 @@ CREATE TABLE Ingredients (
 
 -- Relation DishIngredients.
 ALTER TABLE Dishes
-ADD COLUMN Dishes."DishIngredients";
+ADD COLUMN "DishIngredients";
 
 -- Création d'un tableau DishIngredients :
 CREATE TABLE DishIngredients (
@@ -276,7 +276,7 @@ INSERT INTO Ingredients ("Name", "is_vegan")
 VALUES 	("Antimatière douce", "True"),
 		("Astéroïde", "True"),
 		("Jambon", "False"),
-		("Fromage", "True"),
+		("Fromage", "False"),
 		("Pâte", "True"),
 		("Sause tomate", "True"),
 		("Pain", "True"),
@@ -284,7 +284,7 @@ VALUES 	("Antimatière douce", "True"),
 		("Salade", "True"),
 		("Eau", "True"),
 		("Jus de fruits", "True"),
-		("Lait", "True"),
+		("Lait", "False"),
 		("Jus de soja", "True"),
 		("Nébuleuse", "True"),
 		("Choux fleur", "True"),
@@ -348,27 +348,36 @@ VALUES 	(7, 1),
 -- Mettre à jours la table Dishes pour savoir si le plat est végan.
 UPDATE Dishes
 SET "is_vegan" = (
-	SELECT Ingredients."is_vegan"
+	SELECT Ingredients.is_vegan
 	FROM Dishes d2
-	JOIN DishIngredients ON DishIngredients."IdDishes" = d2."IdDishes"
-	JOIN Ingredients ON Ingredients."IdIngredient" = DishIngredients."IdIngredient"
-	WHERE Dishes."IdDishes" = d2."IdDishes"
-	ORDER BY Ingredients."is_vegan"
+	JOIN DishIngredients ON DishIngredients.IdDishes = d2.IdDishes
+	JOIN Ingredients ON Ingredients.IdIngredient = DishIngredients.IdIngredient
+	WHERE Dishes.IdDishes = d2.IdDishes
+	ORDER BY Ingredients.is_vegan
 	LIMIT 1
+);
+
+-- Mise à jours du prix des plats.
+UPDATE CustomerOrders
+SET Total_amount = (
+    SELECT SUM(oi.Quantity * d.Price)
+    FROM OrderItems oi
+    JOIN Dishes d ON oi.IdDishes = d.IdDishes
+    WHERE oi.IdOrders = CustomerOrders.IdOrders
 );
 
 -- Générer un "menu vegan".
 SELECT *
 FROM Dishes
-WHERE Dishes."is_vegan" = "True";
+WHERE Dishes.is_vegan = "True";
 
 -- Créer un classement des restaurants par ancienneté.
 SELECT *
 FROM Restaurants
-ORDER BY Restaurants."Opening_year" ASC;
+ORDER BY Restaurants.Opening_year ASC;
 
 -- Simuler une "commande la plus haute de la semaine".
 SELECT *
 FROM CustomerOrders
-ORDER BY CustomerOrders."Total_amount" DESC
+ORDER BY CustomerOrders.Total_amount DESC
 LIMIT 1;

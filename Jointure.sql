@@ -1,5 +1,5 @@
 --  Liste des employés avec le nom de leur restaurant. 
-SELECT Employees."Firstname" ||  ' ' || Employees."Lastname" AS "Nom de l'employé", Restaurants."Name" AS "Nom du restaurent"
+SELECT Employees."Firstname" ||  ' ' || Employees."Lastname" AS "Nom de l'employé", Restaurants."Name" AS "Nom du restaurant"
 FROM Employees
 JOIN Restaurants ON Restaurants."IdRestaurant" = Employees."IdRestaurant";
 

@@ -11,10 +11,10 @@ VALUES (1, 1, 1, 2),
        (3, 2, 3, 3);
 
 -- Calculer pour chaque commande : (Nombre total d’articles / montant total)
-SELECT co."IdOrders", SUM("Quantity") AS "TotalItems", "Total_amount", SUM("Quantity") / "Total_amount" AS "ItemsPerAmount"
+SELECT co.IdOrders, SUM(oi.Quantity) AS "TotalItems", co.Total_amount, SUM(oi.Quantity) / co.Total_amount AS "ItemsPerAmount"
 FROM CustomerOrders co
 JOIN OrderItems oi ON co.IdOrders = oi.IdOrders
-GROUP BY co."IdOrders", Total_amount;
+GROUP BY co.IdOrders, co.Total_amount;
 
 
 -- Lister les commandes triées par montant décroissant.
